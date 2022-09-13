@@ -1,5 +1,5 @@
 """
-black-schole-merton 模型
+black-schole-merton Model
 """
 
 import numpy as np
@@ -8,12 +8,25 @@ from scipy import stats
 
 def cal_option_price(s, k ,t, r, sigma, option_type):
     """
-    计算bsm下欧式期权价格
+    Calculate Premium for European Option
 
     Parameters
     ----------
+    s: float
+        Spot price
+    k: float
+        Strike price
+    t: float
+        Time to maturity in unit
+    sigma: float
+        Volatility
     option_type: str
-        期权类型: call put
+        Option type: call put
+    
+    Return
+    ------
+    Option Premium
+
     """
     d1 = (np.log(s / k) + (r + 0.5 * sigma ** 2) * t)/(sigma * np.sqrt(t))
     d2 = (np.log(s / k) + (r - 0.5 * sigma ** 2) * t)/(sigma * np.sqrt(t))
@@ -22,28 +35,34 @@ def cal_option_price(s, k ,t, r, sigma, option_type):
     elif option_type in ('put', 'p', 'P', -1):
         return -s * (1 - stats.norm.cdf(d1, 0., 1.)) + k * np.exp(-r * t) * (1 - stats.norm.cdf(d2, 0., 1))
     else:
-        raise ValueError("只支持call 与 put")
+        raise ValueError("Only Support call and put")
 
 
 def cal_implied_volatility(s, k, t, r, option_value, option_type, high=5., low=0.00001, maxiter=10000, tol=0.000001):
     """
-    计算bsm下欧式期权隐含波动率
+    Calculate Implied volatility for European Option with BSM model
+    
+    Bisection search is used to solve the equation
 
     Parameters
     ----------
     option_type: str
-        期权类型: call put
+        Option Type: call put
     high: float
-        隐含波动率最大可能值
+        Max possible implied volatility
     low: float
-        隐含波动率最小可能只
+        Min possible implied volatility
     maxiter: int
-        最大循环次数
+        Max Iteration Number
     tol: float
-        期权价格误差
+        Tolerance of Diff in Option price
+
+    Returns
+    -------
+    Implied volatility
 
     """
-    # 阈值检查
+    # check outlier
     upper_bound = cal_option_price(s, k, t, r, high, option_type)
     lower_bound = cal_option_price(s, k, t, r, low, option_type)
     if not (lower_bound <= option_value <= upper_bound):
