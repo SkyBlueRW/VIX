@@ -17,9 +17,8 @@ As Jiang & Tian (2005) demonstrated, VIX is usually larger than future realized 
 
 ## Intuition of VIX index
 **Replicating**
-$$
-\frac{dS_t}{S_t} = \mu(t,...)dt + \sigma(t,...)dZ_t
-$$
+
+$$\frac{dS_t}{S_t} = \mu(t,...)dt + \sigma(t,...)dZ_t$$
 
 $$
 \begin{aligned}
