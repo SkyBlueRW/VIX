@@ -21,6 +21,9 @@ As Jiang & Tian (2005) demonstrated, VIX is usually larger than future realized 
 \frac{dS_t}{S_t} = \mu(t,...)dt + \sigma(t,...)dZ_t
 ```
 
+This expression uses `\$` to display a dollar sign: $\sqrt{\$4}$
+
+
 **Legacy CBOE VIX calculation**
 
 The initial version of the CBOE VIX index is based on Whaley(1993, 2000). The method at the time is based on S&P 100 indx options. It take the equal weighted average of the Implied volatility of ATM option as the VIX Index. 
