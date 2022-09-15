@@ -1,6 +1,8 @@
 # Vix
 For Vix calculation (volatility index)
 
+## Intro
+
 **An introduction on VIX**
 
 VIX index is the market expectation of future realized volatility under risk neutral measure (Or more appropriately it is the quadratic variation instead of realized volatility). We will be able to construct the VIX index as a replicating portfolio of variance futures so that vix index and option premium (replicating cost) can be linked. Thus a model free estimation of vix is here. 
@@ -12,6 +14,13 @@ Conventially, VIX index is taken as a good estimator of realized volatility for 
 
 As Jiang & Tian (2005) demonstrated, VIX is usually larger than future realized volatility. This phenomenon is in some degree related to variance risk premium (VRP - the strike price of US variance swap is usually larger than realized variance). Carr & Wu (2008) believes that the difference between VIX and future realized variance can be used as an estimator of VRP. They argued that "investors are willing to pay extra money to enter into variance because they dislike variance, not just because it is anti-correlated with stock prices, but on its own right. This lead to many considerating variance as an asset clas in and of itself"
 
+
+## Intuition of VIX index
+**Replicating**
+```math
+\frac{dS_t}{S_t} = \mu(t,...)dt + \sigma(t,...)dZ_t
+```
+
 **Legacy CBOE VIX calculation**
 
 The initial version of the CBOE VIX index is based on Whaley(1993, 2000). The method at the time is based on S&P 100 indx options. It take the equal weighted average of the Implied volatility of ATM option as the VIX Index. 
@@ -19,7 +28,6 @@ The initial version of the CBOE VIX index is based on Whaley(1993, 2000). The me
 There are 2 major drawbacks on this method. Firstly, it relies on BSM model to get implied volatility hence it is susceptibel to BSM errors. Secondly it might ignore information from OTM and ITM options.
 
 Since 2003, COBE improved their method based on DDKZ (1999) reserach report and change the underlying to S&P 500. It is the current version of method that CBOE used for VIX index calculation.
-
 
 ## Reference
 - DDKZ(1999): More Than You Ever Wanted to Know About Volatility Swaps
@@ -29,7 +37,7 @@ Since 2003, COBE improved their method based on DDKZ (1999) reserach report and 
 - Carr & Wu (2008): Variance Risk Premium
 
 
-# Usage Demo
+## Usage Demo
 
 ```python 
 from vix import cal_vix
@@ -44,6 +52,7 @@ vix = cal_vix(option_data, risk_free_rate, horizon=30)
 
 **Data Input Example**
 1. required data field for option_data：option_type, strike, price, time_remaining(natural day)
+
     I.E:
             option_type,  strike,  price,  time_remaining
             'put'           2.3     0.15       30
