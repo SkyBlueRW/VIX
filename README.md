@@ -27,7 +27,7 @@ $$\frac{dS_t}{S_t} = \mu(t,...)dt + \sigma(t,...)dZ_t$$
 
 For a variance forward with delievery price of k, its price should be $F = E^Q[e^{-rT}(V - K)]$ as per no arbitrage pricing where V is the realized variance $V = \frac{1}{T}\int_o^T\sigma^2(t,...)dt$.
 
-For such a forward, the fair delivery price (the delievery price k that set F to) should be as follows 
+For such a forward, the fair delivery price (the delievery price k that set F to 0) should be as follows 
 
 $$
 \begin{aligned}
@@ -36,6 +36,21 @@ K_{var} &= E^Q[V] \\
 \end{aligned}
 $$
 
+**Replicating variance forward**
+Since the instantaneous variance is unknown, we hope to construct a replicating portfolio to estimate $K_{var}$
+
+$$
+\begin{aligned}
+K_{var} &= \frac{1}{T}E^Q[\int_o^T\sigma^2(t,...)dt] \\
+&= \frac{2}{T} E^Q[\int_0^T \frac{dS_t}{S_t} - d(logS_t)] \\ 
+& =  \frac{2}{T} E^Q[\int_0^T\frac{dS_t}{S_t} - log(\frac{S_T}{S_0})]
+\end{aligned}
+$$
+
+It is clear that, exposue to variance can be obtained via 2 positions:
+
+1. $\frac{1}{S_t}$ share of the underlying
+2. log contract static position
 
 
 **Legacy CBOE VIX calculation**
