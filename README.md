@@ -94,8 +94,7 @@ $$
 DDKZ further deduced to the following form. The full proof is available in the appendix of Jiang & Tian (2007)
 
 $$
-K_{var} = \frac{2 e^{rT}}{T}[e^{rT}\int_0^{F_0} \frac{1}{K^2}P(K)dK 
-+ e^{rT}\int_{F_0}^{\infty} \frac{1}{K^2}C(K)dK]
+K_{var} = \frac{2 e^{rT}}{T}[e^{rT}\int_0^{F_0} \frac{1}{K^2}P(K)dK + e^{rT}\int_{F_0}^{\infty} \frac{1}{K^2}C(K)dK]
 $$
 
 **The $\frac{1}{K^2}$ option portfolio under BSM**
@@ -119,6 +118,16 @@ $$
 w(k) &= \frac{const}{K^2}
 \end{aligned}
 $$
+
+**Further Adjustment on Numerical Method**
+In theri 2005 and 2007 papers, Jiang & Tian wen through the estimation error with the CBOE estimation method in great details. They demonstrated that 2 estimation errors are largely affect the precision especially with a market of sparse strikes
+
+1. Discretion Error: It originated that option strike is not continous in reality. Often it will lead to an over estimate of VIX
+
+2. Truncation Error: It originated that option strike is not from 0 to infinity, which will lead to under estimate of VIX.
+
+Both estimation errors can be effectively alleviated via polation on implied volatility. The reason to polation on implied volatility rather option premium is that implied volatility is more smooth. Jiang & Tian and Carr & Wu propose to interpolate  such that the distance between any two strikes is less than 0.35 * atm implied vol. Also to exterpolate via flat lines to extend the strike series to the range of atm * exp(+- 8 * atm implied vol)
+
 
 
 **Legacy CBOE VIX calculation**
