@@ -90,13 +90,35 @@ $$
 - The second part is the 1st order Taylor expansion of the log contract
 
 **Demeterfi et al (1999) formula**
+
 DDKZ further deduced to the following form. The full proof is available in the appendix of Jiang & Tian (2007)
 
 $$
 K_{var} = \frac{2 e^{rT}}{T}[e^{rT}\int_0^{F_0} \frac{1}{K^2}P(K)dK 
- + e^{rT}\int_{F_0}^{\infty} \frac{1}{K^2}C(K)dK ]]
++ e^{rT}\int_{F_0}^{\infty} \frac{1}{K^2}C(K)dK]
 $$
 
+**The $\frac{1}{K^2}$ option portfolio under BSM**
+
+$$
+\begin{aligned}
+vega &= \frac{\partial C}{\partial \sigma^2} = \frac{S\sqrt{\tau}}{2\sigma}\frac{exp(-d_1^2/2)}{\sqrt{2}\pi}\\
+\Pi &= \int_{0}^{\infty} w(k) O(S, K, v) dK \\
+vega_{\pi} &= \int_{0}^{\infty} w(k) vega_o(S,K,v) dK \\
+\end{aligned}
+$$
+
+To make the portfolio vega invariant to underlying price, set the partial derivative to 0
+
+$$
+\begin{aligned}
+\frac{\partial vega_{\Pi}}{\partial S} &= 0 \\
+\downarrow \\
+2w(k) + K\frac{\partial w(k)}{\partial K} &= 0 \\
+\downarrow \\ 
+w(k) &= \frac{const}{K^2}
+\end{aligned}
+$$
 
 
 **Legacy CBOE VIX calculation**
