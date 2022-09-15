@@ -25,9 +25,10 @@ $$\frac{dS_t}{S_t} = \mu(t,...)dt + \sigma(t,...)dZ_t$$
 
 **Variance Forward**
 
-For a variance forward with delievery price of k, its price should be $F = E^Q[e^{-rT}(V - K)]$ as per no arbitrage pricing where V is the realized variance ($V = \frac{1}{T}\int_o^T\sigma^2(t,...)dt$).
+For a variance forward with delievery price of k, its price should be $F = E^Q[e^{-rT}(V - K)]$ as per no arbitrage pricing where V is the realized variance $V = \frac{1}{T}\int_o^T\sigma^2(t,...)dt$.
 
 For such a forward, the fair delivery price (the delievery price k that set F to) should be as follows 
+
 $$
 \begin{aligned}
 K_{var} &= E^Q[V] \\
