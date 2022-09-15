@@ -20,10 +20,11 @@ As Jiang & Tian (2005) demonstrated, VIX is usually larger than future realized 
 ```math
 \frac{dS_t}{S_t} = \mu(t,...)dt + \sigma(t,...)dZ_t
 ```
-```math
+$$
 \frac{dS_t}{S_t} = \mu(t,...)dt + \sigma(t,...)dZ_t
-```
+$$
 This expression uses `\$` to display a dollar sign: $\sqrt{\$4}$
+$$ g(x) = {\\frac{a}{1-a^2} }$$
 
 
 **Legacy CBOE VIX calculation**
