@@ -65,6 +65,38 @@ log\frac{S_T}{S_{\star}} & = \frac{S_T - S_{\star}}{S_{\star}} \\
 \end{aligned}
 $$
 
+Take the expectation of the 2 position we got so far. We can get the VIX as below. It should be noted that $S_{\star}$ is an arbitrary number. Since OTM options usually come with better liquidity, COBE choose to use the OTM call and put for the calculation VIX. In this situation, $S_{\star}$ is the spot price (or other price that can be used to determine what is OTM).
+
+$$
+\begin{aligned}
+K_{var} &= \frac{2}{T}[rT - (\frac{S_0}{S_{\star}}e^{rT} - 1) - log\frac{S_{\star}}{S_0} \\ 
+& + e^{rT}\int_0^{S_{\star}} \frac{1}{K^2}P(K)dK \\
+& + e^{rT}\int_{S_{\star}}^{\infty} \frac{1}{K^2}C(K)dK ]
+\end{aligned}
+$$
+
+For the calibration in real world, various numerical method can be used.
+
+**CBOE Numerical Method**
+
+$$
+\begin{aligned}
+\sigma^2 &= \frac{2}{T}\sum\frac{\Delta K_i}{K_i^2}e^{rT}Q(K_i) - \frac{1}{T}[\frac{F}{K_0} - 1]^2 \\
+\Delta K_i &= \frac{K_{i+1} - K_{i-1}}{2}
+\end{aligned}
+$$
+
+- The first part is about the expectation of an option, in natural it is a integration
+- The second part is the 1st order Taylor expansion of the log contract
+
+**Demeterfi et al (1999) formula**
+DDKZ further deduced to the following form. The full proof is available in the appendix of Jiang & Tian (2007)
+
+$$
+K_{var} = \frac{2 e^{rT}}{T}[e^{rT}\int_0^{F_0} \frac{1}{K^2}P(K)dK 
+ + e^{rT}\int_{F_0}^{\infty} \frac{1}{K^2}C(K)dK ]]
+$$
+
 
 
 **Legacy CBOE VIX calculation**
