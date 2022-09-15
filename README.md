@@ -16,15 +16,18 @@ As Jiang & Tian (2005) demonstrated, VIX is usually larger than future realized 
 
 
 ## Intuition of VIX index
-**Replicating**
+
+
+Assume market price of the underlying follows the Geometric Brownian Motion without jump as below.
 
 $$\frac{dS_t}{S_t} = \mu(t,...)dt + \sigma(t,...)dZ_t$$
 
-$$
-\begin{aligned}
-F &= E^Q[e^{-rT}(V - K)]
-\end{aligned}
-$$
+
+**Variance Forward**
+
+For a variance forward with delievery price of k, its price should be $F = E^Q[e^{-rT}(V - K)]$ as per no arbitrage pricing 
+
+
 
 **Legacy CBOE VIX calculation**
 
