@@ -21,7 +21,11 @@ $$
 \frac{dS_t}{S_t} = \mu(t,...)dt + \sigma(t,...)dZ_t
 $$
 
-
+$$
+\begin{aligned}
+F &= E^Q[e^{-rT}(V - K)]
+\end{aligned}
+$$
 
 **Legacy CBOE VIX calculation**
 
