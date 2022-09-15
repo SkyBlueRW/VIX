@@ -49,8 +49,22 @@ $$
 
 It is clear that, exposue to variance can be obtained via 2 positions:
 
-1. $\frac{1}{S_t}$ share of the underlying
-2. log contract static position
+1. a dynamic position on $\frac{1}{S_t}$ share of the underlying
+2. a static position on log contract
+
+Based on the assumption, we can get the expectation of part 1 as $E^Q[\int_0^T \frac{dS_t}{S_t}] = rT$
+
+As to part 2 (the static log contract), we can obtain the log contract via the portfolio of forward and options. 
+
+$$
+\begin{aligned}
+\frac{S_T}{S_0} &= log\frac{S_T}{S_{\star}} + log\frac{S_{\star}}{S_0} \\ 
+log\frac{S_T}{S_{\star}} & = \frac{S_T - S_{\star}}{S_{\star}} \\
+&+\int_0^{S_\star} \frac{1}{k^2} Max(K-S_T, 0)dK \\
+&+\int_{S_\star}^{\infty} \frac{1}{k^2} Max(S_T - K, 0)dK
+\end{aligned}
+$$
+
 
 
 **Legacy CBOE VIX calculation**
