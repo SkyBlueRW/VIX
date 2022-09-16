@@ -61,7 +61,7 @@ As to part 2 (the static log contract), we can obtain the log contract via the p
 $$
 \begin{aligned}
 log \frac{S_T}{S_0} &= log\frac{S_T}{S_{\star}} + log\frac{S_{\star}}{S_0} \\ 
-- log\frac{S_T}{S_{\star}} & = - \frac{S_T - S_{\star}}{S_{\star}} \\
+-log\frac{S_T}{S_{\star}} & = -\frac{S_T - S_{\star}}{S_{\star}} \\
 &+\int_0^{S_\star} \frac{1}{k^2} Max(K-S_T, 0)dK \\
 &+\int_{S_\star}^{\infty} \frac{1}{k^2} Max(S_T - K, 0)dK
 \end{aligned}
