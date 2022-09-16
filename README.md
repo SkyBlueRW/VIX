@@ -61,15 +61,15 @@ As to part 2 (the static log contract), we can obtain the log contract via the p
 $$
 \begin{aligned}
 log \frac{S_T}{S_0} &= log\frac{S_T}{S_{\star}} + log\frac{S_{\star}}{S_0} \\ 
--log\frac{S_T}{S_{\star}} & = -\frac{S_T - S_{\star}}{S_{\star}} \\
+-{log\frac{S_T}{S_{\star}}} & = -\frac{S_T - S_{\star}}{S_{\star}} \\
 &+\int_0^{S_\star} \frac{1}{k^2} Max(K-S_T, 0)dK \\
 &+\int_{S_\star}^{\infty} \frac{1}{k^2} Max(S_T - K, 0)dK
 \end{aligned}
 $$
 
-- A short position in $\frac{1}{S_{\star}}$ forward contracts struk at $S_{\star}$
-- A long position in $\frac{1}{K^2}$ put options struck at K for all strikes from 0 to $S_{\star}$
-- a similar long position in $\frac{1}{K^2}$ call options struck at K, for all strikes from $S_{\star}$ to inf.
+1. A short position in $\frac{1}{S_{\star}}$ forward contracts struk at $S_{\star}$
+2. A long position in $\frac{1}{K^2}$ put options struck at K for all strikes from 0 to $S_{\star}$
+3. a similar long position in $\frac{1}{K^2}$ call options struck at K, for all strikes from $S_{\star}$ to inf.
 
 Take the expectation of the 2 position we got so far. We can get the VIX as below. It should be noted that $S_{\star}$ is an arbitrary number. Since OTM options usually come with better liquidity, COBE choose to use the OTM call and put for the calculation VIX. In this situation, $S_{\star}$ is the spot price (or other price that can be used to determine what is OTM).
 
