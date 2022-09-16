@@ -9,7 +9,7 @@ setuptools.setup(
     version="1.00",
     author="Ruitao Wang",
     author_email="wang.ruitao@outlook.com",
-    description="Vix Calculation that suits Chinese option market",
+    description="Vix Calculation ",
     # long_description=long_description,
     # long_description_content_type="text/markdown",
     # packages=setuptools.find_packages(
