@@ -37,6 +37,7 @@ K_{var} &= E^Q[V] \\
 $$
 
 **Replicating variance forward**
+
 Since the instantaneous variance is unknown, we hope to construct a replicating portfolio to estimate $K_{var}$
 
 $$
@@ -58,7 +59,7 @@ As to part 2 (the static log contract), we can obtain the log contract via the p
 
 $$
 \begin{aligned}
-\frac{S_T}{S_0} &= log\frac{S_T}{S_{\star}} + log\frac{S_{\star}}{S_0} \\ 
+log \frac{S_T}{S_0} &= log\frac{S_T}{S_{\star}} + log\frac{S_{\star}}{S_0} \\ 
 log\frac{S_T}{S_{\star}} & = \frac{S_T - S_{\star}}{S_{\star}} \\
 &+\int_0^{S_\star} \frac{1}{k^2} Max(K-S_T, 0)dK \\
 &+\int_{S_\star}^{\infty} \frac{1}{k^2} Max(S_T - K, 0)dK
@@ -120,7 +121,8 @@ w(k) &= \frac{const}{K^2}
 $$
 
 **Further Adjustment on Numerical Method**
-In theri 2005 and 2007 papers, Jiang & Tian wen through the estimation error with the CBOE estimation method in great details. They demonstrated that 2 estimation errors are largely affect the precision especially with a market of sparse strikes
+
+In their 2005 and 2007 papers, Jiang & Tian wen through the estimation error with the CBOE estimation method in great details. They demonstrated that 2 estimation errors are largely affect the precision especially with a market of sparse strikes
 
 1. Discretion Error: It originated that option strike is not continous in reality. Often it will lead to an over estimate of VIX
 
