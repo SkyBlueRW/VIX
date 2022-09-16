@@ -1,5 +1,6 @@
 # Vix
-For Vix calculation (volatility index)
+
+VIX - its intuition, calculation and adjustment
 
 ## Intro
 
