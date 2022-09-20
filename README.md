@@ -23,6 +23,8 @@ Assume market price of the underlying follows the Geometric Brownian Motion with
 
 $$\frac{dS_t}{S_t} = \mu(t,...)dt + \sigma(t,...)dZ_t$$
 
+**Risk Neutral Pricing**
+
 
 **Variance Forward**
 
