@@ -25,6 +25,7 @@ $$\frac{dS_t}{S_t} = \mu(t,...)dt + \sigma(t,...)dZ_t$$
 
 **Risk Neutral Pricing**
 
+In a complete market with no abitrage opportunities, there should exists an unique probability measure that can be used to price any contigent claims. It is called risk neutral measure since all expected returns would be risk free rate.
 
 **Variance Forward**
 
