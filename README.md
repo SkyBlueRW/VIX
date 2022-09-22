@@ -23,10 +23,6 @@ Assume market price of the underlying follows the Geometric Brownian Motion with
 
 $$\frac{dS_t}{S_t} = \mu(t,...)dt + \sigma(t,...)dZ_t$$
 
-**Risk Neutral Pricing**
-
-In a complete market with no abitrage opportunities, there should exists an unique probability measure that can be used to price any contigent claims. It is called risk neutral measure since all expected returns would be risk free rate.
-
 **Variance Forward**
 
 For a variance forward with delievery price of k, its price should be $F = E^Q[e^{-rT}(V - K)]$ as per no arbitrage pricing where V is the realized variance $V = \frac{1}{T}\int_o^T\sigma^2(t,...)dt$.
@@ -154,6 +150,15 @@ Since 2003, COBE improved their method based on DDKZ (1999) reserach report and 
 - Jiang & Tian (2005): The Model-Free Implied Volatility and Its Information Cotent
 - Jiang & Tian (2009): Extracting Model-Free Volatility from Option Prices: An Examination of the VIX Index
 - Carr & Wu (2008): Variance Risk Premium
+
+**Risk Neutral Pricing**
+
+In a complete market with no abitrage opportunities, there should exists an unique probability measure that can be used to price any contigent claims. It is called risk neutral measure since all expected returns would be risk free rate.
+
+1. Euler Equations. When Law of One Price hold ($\pi (c^Tx) = c^T \pi (x) = c^Tp $, $\pi$ is the pricing function).
+
+
+
 
 
 ## Usage Demo
