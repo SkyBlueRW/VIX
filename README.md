@@ -155,7 +155,7 @@ Since 2003, COBE improved their method based on DDKZ (1999) reserach report and 
 
 In a complete market with no abitrage opportunities, there should exists an unique probability measure that can be used to price any contigent claims. It is called risk neutral measure since all expected returns would be risk free rate.
 
-1. Euler Equations. When Law of One Price hold ($\pi (c^Tx) = c^T \pi (x) = c^Tp $, $\pi$ is the pricing function).
+1. Euler Equations. When Law of One Price hold ($\pi(c^Tx)=c^T\pi(x)=c^Tp$, $\pi$ is the pricing function).
 
 
 
