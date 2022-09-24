@@ -144,19 +144,13 @@ There are 2 major drawbacks on this method. Firstly, it relies on BSM model to g
 
 Since 2003, COBE improved their method based on DDKZ (1999) reserach report and change the underlying to S&P 500. It is the current version of method that CBOE used for VIX index calculation.
 
+
 ## Reference
 - DDKZ(1999): More Than You Ever Wanted to Know About Volatility Swaps
 - CBOE vix white paper
 - Jiang & Tian (2005): The Model-Free Implied Volatility and Its Information Cotent
 - Jiang & Tian (2009): Extracting Model-Free Volatility from Option Prices: An Examination of the VIX Index
 - Carr & Wu (2008): Variance Risk Premium
-
-**Risk Neutral Pricing**
-
-In a complete market with no abitrage opportunities, there should exists an unique probability measure that can be used to price any contigent claims. It is called risk neutral measure since all expected returns would be risk free rate.
-
-1. Euler Equations. When Law of One Price hold ($\pi(c^Tx)=c^T\pi(x)=c^Tp$, $\pi$ is the pricing function).
-
 
 
 
