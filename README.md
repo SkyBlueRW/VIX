@@ -2,6 +2,33 @@
 
 VIX - its intuition, calculation and adjustment
 
+
+
+## Usage Demo
+
+```python 
+from vix import cal_vix
+
+# Fetch data 
+option_data = get_option_data('YYYY-MM-dd')
+risk_free_rate = get_risk_free_rate('YYYY-MM-dd')
+
+# Calculate
+vix = cal_vix(option_data, risk_free_rate, horizon=30)
+```
+
+**Data Input Example**
+1. required data field for option_data：option_type, strike, price, time_remaining(natural day)
+
+    I.E:
+            option_type,  strike,  price,  time_remaining
+            'put'           2.3     0.15       30
+            'put'           2.3     0.21       60
+            'call'          2.3     0.15       30
+            'call'          2.3     0.23       60
+
+2. risk_free_rate: should be after annualzation
+
 ## Intro
 
 **An introduction on VIX**
@@ -154,28 +181,3 @@ Since 2003, COBE improved their method based on DDKZ (1999) reserach report and 
 
 
 
-
-## Usage Demo
-
-```python 
-from vix import cal_vix
-
-# Fetch data 
-option_data = get_option_data('YYYY-MM-dd')
-risk_free_rate = get_risk_free_rate('YYYY-MM-dd')
-
-# Calculate
-vix = cal_vix(option_data, risk_free_rate, horizon=30)
-```
-
-**Data Input Example**
-1. required data field for option_data：option_type, strike, price, time_remaining(natural day)
-
-    I.E:
-            option_type,  strike,  price,  time_remaining
-            'put'           2.3     0.15       30
-            'put'           2.3     0.21       60
-            'call'          2.3     0.15       30
-            'call'          2.3     0.23       60
-
-2. risk_free_rate: should be after annualzation
